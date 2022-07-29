@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         leftDiceView.alpha = 0.5
-        rightDiceView.image = imageLiteral
+        //rightDiceView.image = #imageLiteral
     }
 
     @IBAction func rollButton(_ sender: UIButton) {
