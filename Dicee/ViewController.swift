@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftDiceView: UIImageView!
     @IBOutlet weak var rightDiceView: UIImageView!
     
-    let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    var leftDiceNumber = 1
+    var rightDiceNumber = 4
+    
+    //let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,10 @@ class ViewController: UIViewController {
 
     @IBAction func rollButton(_ sender: UIButton) {
         
-        leftDiceView.image = diceArray.randomElement()
-        rightDiceView.image = diceArray.randomElement()
-        
+        leftDiceView.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
+        rightDiceView.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")][rightDiceNumber]
+        leftDiceNumber += 1
+        rightDiceNumber -= 1
     }
     
 }
